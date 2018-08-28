@@ -18,7 +18,11 @@ hello
 
 ![white duck](white duck.jpg)
 
-![white duck 2](/CIM640/white duck.jpg)
+
+![white duck 2](/User/griffinx/Desktop/white duck.jpg)
+
+
+
 
 * candy
 * sugar
