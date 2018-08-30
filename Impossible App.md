@@ -25,3 +25,9 @@ The preparation before printing together with the clean-up process after that ar
 ### How Does Smart Workbench Help
 
 ![Smart Workbench](smartworkbench.jpg)
+
+
+##### Earlier drafts (discarded)
+![Brainstorm](brainstorm.jpg)
+
+<p>![Desk](desk1.jpg)</p>
