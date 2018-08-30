@@ -15,7 +15,6 @@ The preparation before printing together with the clean-up process after that ar
 * Put the graphic onto the silkscreen or lino and print!
 
 
-
 ##### Clean-up
 * take away your printmaking masterpiece and reserve them well. (auto scan and save as photo copy as well as the paperwork themselves)
 * Clean up the tools, apron, etc
