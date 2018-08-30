@@ -28,7 +28,7 @@ The preparation before printing together with the clean-up process after that ar
 
 ##### Earlier drafts (discarded)
 
-![brainstorm.jpg](brainstorm.jpg)
+![brainstorm.jpg](brainstorm.JPG)
 
 
 ![DESK](.jpg)
