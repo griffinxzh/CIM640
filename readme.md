@@ -16,10 +16,10 @@ hello
 
 
 
-![white duck](white duck.jpg)
+![white duck](whiteduck.jpg)
 
 
-![white duck 2](/User/griffinx/Desktop/white duck.jpg)
+![white duck 2](whiteduck.jpg)
 
 
 
