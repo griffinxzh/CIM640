@@ -31,4 +31,4 @@ The preparation before printing together with the clean-up process after that ar
 ![brainstorm.jpg](brainstorm.jpg)
 
 
-![DESK](desk1.jpg)
+![DESK](.jpg)
