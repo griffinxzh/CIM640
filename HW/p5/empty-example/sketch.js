@@ -9,6 +9,16 @@ var word1 = 'word';
 var trueFalse=true;
 var sentence="I'm a sentence";
 // to differnt
+var charColor="orange";
+//to change the color when mousepressed
+
+
+var facePosX="120";
+var facePosY="120";
+/*var eyeSizeA="50";*/
+var eyeSizeB="80";
+//to move
+
 
 
 
@@ -37,10 +47,12 @@ function draw() {
   //this "white" will make the shapes below with white stroke (rather than red)
   fill('orange');
   //the fill affects everything below
-  ellipse(120,120,50,80);
-  ellipse(200,120,50,80);
-  rect(150,140,10,60);  //nose
-  rect(120,240,130,10); //mouth
+  facePosX = mouseX;
+  facePosY = mouseY;
+  ellipse(facePosX,facePosY,50,80);
+  ellipse(facePosX + 80,facePosY,50,80);
+  rect(facePosX+30,facePosY+20,10,60);  //nose
+  rect(facePosX,facePosY+120,130,10); //mouth
 
   stroke('red');
   strokeWeight(1);
@@ -56,5 +68,10 @@ function draw() {
   triangle();
   quad();
   //a shape with four sides
+
+}
+
+function mousePressed(){
+  charColor = "blue";
 
 }
