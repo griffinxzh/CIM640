@@ -1,29 +1,24 @@
 # CIM640 - FALL 2018
 
-# heading 1
-## heading 2
 
-###### heading 6
-
-hello
-
-<br>hello again</br>
-
-<p>hello from the other side</p>
+## Zihan Xu
 
 
-[click here for google](google.com)
+* <br>**Chang Gung University**
+*09/2014 ~ 06/2018*</br>
+Bachelor of Design
+
+
+* <br>**Universiy of Miami**
+*08/2018 ~ present*</br>
+IMFA Candidate 2020
+
+
+
+
+
+[Find me on behance](https://www.behance.net/Griffin_X)
 
 
 
 ![white duck](whiteduck.jpg)
-
-
-![white duck 2](whiteduck.jpg)
-
-
-
-
-* candy
-* sugar
-* lollipop
