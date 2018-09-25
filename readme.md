@@ -20,5 +20,6 @@ IMFA Candidate 2020
 [Find me on behance](https://www.behance.net/Griffin_X)
 
 
-
+<br>
 ![white duck](whiteduck.jpg)
+</br>
