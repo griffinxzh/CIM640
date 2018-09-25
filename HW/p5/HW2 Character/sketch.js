@@ -1,59 +1,46 @@
-function preload(){
-  //remember to preload images before insert them
- bg1 = loadImage ('assets/bg1.png');
- bg2 = loadImage ('assets/bg2.png');
- orange1 = loadImage ('assets/orange1.png');
-}
+var bodyColor = "#ffa910";
+var leafColor = "#5a8e00";
+var glassesColor = "black";
+var bgColor = "#ffdede";
+var a = 200;
+var b = 180;
+var bodyPostionX = 300;
+var bodyPositionY = 200;
 
-var r=50;
-var x=-r;
-var canvasWidth=600;
-var canvasHeight=400;
-var bgColor = "pink";
-var bgColor2= "blue";
-var startStop = false;
+
 
 function setup() {
   // put setup code here
-  createCanvas(canvasWidth,canvasHeight);
-  background(bg1);
+  createCanvas(600,400);
+  background(bgColor);
+
 }
 
 function draw() {
   // put drawing code here
-  createCanvas(canvasWidth,canvasHeight);
-  background(bg1);
-//  image(bg1，0，0)；
-//  image(orange1,0,200);
+  strokeWeight(0);
+
+  //body
+  fill(bodyColor);
+  ellipse(bodyPostionX, bodyPositionY, a, b);
+
+  //leaf+stem
+  fill(leafColor);
+  rect(bodyPostionX, bodyPositionY - 150, 10, 70);
+  arc(bodyPostionX+50,bodyPositionY-100,90,70,PI,TWO_PI);
+
+  //glasses
+  fill(glassesColor);
+  arc(240,190,110,90,0, PI);
+  arc(350,190,110,90,0, PI);
+
+  //mouth
+  fill("white");
+  arc(300,250,60,40,0,PI);
+  fill("black")
+  rect(280,260,40,2);
 
 
-  if(startStop == false){
-    if (x<600+r){x+=5};
-    if (x>=600+r){x=-r};
-  }
-
-
-  if (mouseY > canvasHeight/2){
-    console.log(bgColor);
-    background(bg1);
-  };
-
-  if (mouseY < canvasHeight/2){
-    console.log(bgColor2);
-    background(bg2);
-  };
-  //ellipse(x,400-mouseY,r,r);
-  image(orange1,x,canvasHeight-mouseY);
-};
-
-function mousePressed(){
-  //if(x>-r){x=0;}
-  console.log("flipflop: " + startStop);
-  if(startStop == false){
-    startStop = true;
-  }else{
-    startStop = false;
-  }
 
 
 }
