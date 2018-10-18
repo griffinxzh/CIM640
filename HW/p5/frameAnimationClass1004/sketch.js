@@ -86,21 +86,20 @@ function draw() {
 
     ellipse(mouseX, mouseY, 10,10);
 
+
+    //draw 4 buttons
     for(var keys in controls){
         fill(controls[keys][3]);
         rect(controls[keys][0],controls[keys][1],controls[keys][2],controls[keys][2] );
         text(keys,controls[keys][0],controls[keys][1]);
 
+        //change color when hover over
         if(mouseX > controls[keys][0] && mouseX< controls[keys][0] +
         controls[keys][2] && mouseY > controls[keys][1] && mouseY <
         controls[keys][1] + controls[keys][2]){
             fill(127,127);
             rect(controls[keys][0],controls[keys][1],controls[keys][2],
             controls[keys][2]);
-
-
-
-
         }
     }
 
@@ -120,7 +119,7 @@ function mousePressed(){
             console.log(state);
             if (state=="fwd"){
               currentFrame++;
-              /*you need to check whether you've reached 
+              /*you need to check whether you've reached
               the end of the array, it needs to be reset*/
               if (currentFrame >= frameArray.length){
                 currentFrame=0;
