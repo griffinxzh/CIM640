@@ -59,16 +59,24 @@ function draw() {
 //  frameRate(24); //❗️
   fill(bodyColor);
   strokeWeight(0);
-  rect(650,250,100,100);
+  rect(920,190,50,50);
   fill("black");
-  textSize(20);
-  text(stepCounter,700,300);
+  textSize(26);
+  text(stepCounter,935,225);
+
+  textSize(28);
+  text("The Maze Trick",700,100);
+  fill("grey");
+  textSize(16);
+  text("1.Move the Orange by 4 direction buttons",700,140);
+  text("2.There are some tricky tools on the maze map",700,180);
+  text("3.Arrive the destination within               steps",700,220);
+  text("4.Try not to engage the demon",700,260);
+  text("5.Certain walls can be crossed",700,300);
 
 //draw charactor
   fill(bodyColor);
   ellipse(actorX, actorY, a,b);
-
-  //console.log(stepCounter);
 
   fill(leafColor);
   rect(actorX, actorY - 45, 3, 21);
