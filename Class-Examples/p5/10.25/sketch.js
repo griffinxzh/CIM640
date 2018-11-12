@@ -28,19 +28,19 @@ function draw() {
 
 
   button1.display();
-  if(button1.check(mouseX,mouseY)){
+  if(button1.checkbutton(mouseX,mouseY)){
     console.log(button1.name);
   }
 
 
   button2.display();
-  if(button2.check(mouseX,mouseY)){
+  if(button2.checkbutton(mouseX,mouseY)){
     console.log(button2.name);
   }
 
   for( var i =0; i < buttonArray.length; i ++){
     buttonArray[i].display();
-    if(buttonArray[i].check(mouseX,mouseY)){
+    if(buttonArray[i].checkbutton(mouseX,mouseY)){
       console.log(buttonArray[i].name);
       background(buttonArray[i].color);
     }
@@ -57,7 +57,8 @@ function draw() {
 //create an interface class
 class interfaces{
   //constructor: characteristics for your object
-  constructor(tempX, tempY, tempS, tempC, tempName){// not limit of num of premeters
+  constructor(tempX, tempY, tempS, tempC, tempName){// not limit of num of parameters
+
     this.x = tempX;
     this.y = tempY;
     this.size = tempS;
@@ -83,7 +84,7 @@ class interfaces{
 
   }
 
-  check(mX,mY){
+  checkbutton(mX,mY){
     if(mX > this.x && mX< this.x + this.size && mY >this.y && mY < this.y + this.size){
       this.overlay = true ;
       return true;
