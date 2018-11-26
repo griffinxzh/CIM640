@@ -19,30 +19,78 @@ function preload(){
 function setup() {
   // put setup code here
   createCanvas(400,400);
-  button1 = new interfaces(100,200,50,"red", "Red Button");
-  button2 = new interfaces(200,200, 50, "green", "Green Button");
+  button1 = new interfac(100,200,50,"red", "Red Button");
+  /*事实证明"interface"⬆️不是预设syntax，故意错拼成interfac也一样能用，只要下面的class也写成interfac即可*/
+  button2 = new interfac(200,200, 50, "green", "Green Button");
 
   for(var i =0; i < 10; i++){
     var c = color(random(255),random(255),random(255));
-    buttonArray[i] = new interfaces(random(width), random(height), 50, c,i);
+    buttonArray[i] = new interfac(random(width), random(height), 50, c,i);
   }
 
   vid.hide();
-  //initial state: hide video,❗️ better not to hide in the preload b/c it's for "preload" files
+  //initial state: hide video,❗️ better not to hide in the preload b/c it's to "preload" files
+}
+
+
+class interfac{
+  //class整段也可以放在mousePress代码最后面
+  //class里面的constructor,display,chec顺序不分先后
+
+
+  //constructor: define parameters,几个参数和new里面的位置关系一一对应
+  constructor(tempX,tempY,tempS,tempC,tempName){
+    this.x = tempX;
+    this.y = tempY;
+    this.size = tempS;
+    this.color = tempC;
+    this.name = tempName;
+    this.overlay = false;
+  }
+
+    //display: draw buttons
+  display(){
+    fill(this.color);
+    rect(this.x,this.y,this.size,this.size);
+    text(this.name, this.x, this.y-10);
+
+    if(this.overlay == true){
+      fill(127,127);
+      rect(this.x,this.y,this.size,this.size);
+    }
+  }
+
+    //chec: cursor area
+  chec(mX,mY){
+    if(mX > this.x && mX < this.x + this.size && mY > this.y && mY < this.y + this.size){
+      this.overlay = true;
+      return true;
+    }else{
+      this.overlay = false;
+      return false;
+    }
+  }
 
 
 }
+
+
+
 
 function draw() {
 
    //display();
    background(255);
    button1.display();
-   if(button1.check(mouseX,mouseY)){
+   if(button1.chec(mouseX,mouseY)){
      console.log(button1.name);
    }
+
    button2.display();
-   button2.check(mouseX,mouseY);
+   button2.chec(mouseX,mouseY);
+   if (button2.chec(mouseX,mouseY)){
+     console.log(button2.name);
+   }
 
    // for(var i = 0; i < buttonArray.length; i++){
    //   buttonArray[i].display();
@@ -53,6 +101,7 @@ function draw() {
    // }
 
 }
+
 
 
 
@@ -68,14 +117,14 @@ function mousePressed (){
   //   }
   // }
 
-  if (button1.check(mouseX, mouseY)){
+  if (button1.chec(mouseX, mouseY)){
     //button1 is red button
     soundFile.stop();
     vid.stop();
     vid.hide();//❗️stop when hide
   }
 
-  if (button2.check(mouseX,mouseY)){
+  if (button2.chec(mouseX,mouseY)){
     //green button
     //❗️play the sound
     soundFile.play();
@@ -89,40 +138,6 @@ function mousePressed (){
 
 
 
-class interfaces{
-  constructor(tempX,tempY,tempS,tempC,tempName){
-    this.x = tempX;
-    this.y = tempY;
-    this.size = tempS;
-    this.color = tempC;
-    this.name = tempName;
-    this.overlay = false;
-  }
-
-  display(){
-
-    fill(this.color);
-    rect(this.x,this.y,this.size,this.size);
-    text(this.name, this.x, this.y-10);
-
-    if(this.overlay == true){
-      fill(127,127);
-      rect(this.x,this.y,this.size,this.size);
-    }
-  }
-
-  check(mX,mY){
-    if(mX > this.x && mX < this.x + this.size && mY > this.y && mY < this.y + this.size){
-      this.overlay = true;
-      return true;
-    }else{
-      this.overlay = false;
-      return false;
-    }
-  }
-
-
-}
 
 
 

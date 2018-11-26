@@ -12,14 +12,19 @@ function setup() {
 function draw() {
   frameRate(15);
   background(255);
+
+
   // display(random(width),random(height),random(255),random(0,100));
   display(posX,posY,colors,rectSize);
-
   var box1 = check(mouseX,mouseY,posX, posY,rectSize);
+  //和下面的check参数位置一一对应
+
 
 
   display(posX+100,posY+100,"red",rectSize);
   var box2 = check(mouseX,mouseY,posX+100, posY+100,rectSize);
+
+
 
   if (box1 == true){
     background("green");
@@ -34,7 +39,7 @@ function draw() {
 }
 
 //how the buttons look like
-function display(tempX,tempY,tempC,tempS){ // x,y,color,size
+function display(tempX,tempY,tempC,tempS){ // x,y,color,size : 4 parameters
   fill(tempC);
 //  rect(posX,posY,rectSize,rectSize);
   rect(tempX,tempY,tempS,tempS);
