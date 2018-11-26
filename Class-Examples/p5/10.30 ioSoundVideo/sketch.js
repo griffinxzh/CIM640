@@ -19,6 +19,7 @@ function preload(){
 function setup() {
   // put setup code here
   createCanvas(400,400);
+<<<<<<< HEAD
   button1 = new interfac(100,200,50,"red", "Red Button");
   /*事实证明"interface"⬆️不是预设syntax，故意错拼成interfac也一样能用，只要下面的class也写成interfac即可*/
   button2 = new interfac(200,200, 50, "green", "Green Button");
@@ -70,18 +71,34 @@ class interfac{
       return false;
     }
   }
+=======
+  button1 = new interfaces(100,200,50,"red", "Red Button");
+  button2 = new interfaces(200,200, 50, "green", "Green Button");
+
+  for(var i =0; i < 10; i++){
+    var c = color(random(255),random(255),random(255));
+    buttonArray[i] = new interfaces(random(width), random(height), 50, c,i);
+  }
+
+  vid.hide();
+  //initial state: hide video,❗️ better not to hide in the preload b/c it's for "preload" files
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
 
 
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
 function draw() {
 
    //display();
    background(255);
    button1.display();
+<<<<<<< HEAD
    if(button1.chec(mouseX,mouseY)){
      console.log(button1.name);
    }
@@ -91,6 +108,13 @@ function draw() {
    if (button2.chec(mouseX,mouseY)){
      console.log(button2.name);
    }
+=======
+   if(button1.check(mouseX,mouseY)){
+     console.log(button1.name);
+   }
+   button2.display();
+   button2.check(mouseX,mouseY);
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
 
    // for(var i = 0; i < buttonArray.length; i++){
    //   buttonArray[i].display();
@@ -104,7 +128,10 @@ function draw() {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
 function mousePressed (){
   // for(var i = 0; i < buttonArray.length; i ++ ){
   //   if(buttonArray[i].check(mouseX, mouseY)){
@@ -117,14 +144,22 @@ function mousePressed (){
   //   }
   // }
 
+<<<<<<< HEAD
   if (button1.chec(mouseX, mouseY)){
+=======
+  if (button1.check(mouseX, mouseY)){
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
     //button1 is red button
     soundFile.stop();
     vid.stop();
     vid.hide();//❗️stop when hide
   }
 
+<<<<<<< HEAD
   if (button2.chec(mouseX,mouseY)){
+=======
+  if (button2.check(mouseX,mouseY)){
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
     //green button
     //❗️play the sound
     soundFile.play();
@@ -138,6 +173,43 @@ function mousePressed (){
 
 
 
+<<<<<<< HEAD
+=======
+class interfaces{
+  constructor(tempX,tempY,tempS,tempC,tempName){
+    this.x = tempX;
+    this.y = tempY;
+    this.size = tempS;
+    this.color = tempC;
+    this.name = tempName;
+    this.overlay = false;
+  }
+
+  display(){
+
+    fill(this.color);
+    rect(this.x,this.y,this.size,this.size);
+    text(this.name, this.x, this.y-10);
+
+    if(this.overlay == true){
+      fill(127,127);
+      rect(this.x,this.y,this.size,this.size);
+    }
+  }
+
+  check(mX,mY){
+    if(mX > this.x && mX < this.x + this.size && mY > this.y && mY < this.y + this.size){
+      this.overlay = true;
+      return true;
+    }else{
+      this.overlay = false;
+      return false;
+    }
+  }
+
+
+}
+>>>>>>> 1662f9eccca31c94ba617ccc96eaaef0955f3a5f
 
 
 
